@@ -17,14 +17,15 @@ document.getElementById("but").onclick = function ()
 
         
         let edit = document.createElement("button");
-        edit.textContent = "edit";
+        edit.textContent = "Edit";
 
 
         edit.onclick = function () {
-            alert("ReWritw your mission in the textbox");
-             document.getElementById("txt").value = "edit your text";
+            alert("Rewritw your mission in the textbox");
+             document.getElementById("txt").value = "Edit your text";
             let save = document.createElement("button");
-             save.textContent = "save";
+             save.textContent = "Save";
+             edit.style.display = "none";
              
 
         
@@ -32,14 +33,21 @@ document.getElementById("but").onclick = function ()
 
         
             save.onclick =  function () {
-                nDiv.textContent = document.getElementById("txt").value;
-                
+            nDiv.textContent = document.getElementById("txt").value;
+            if (document.getElementById("txt").value!=="")
+            {
+                edit.style.display = "inline";
+
+                nDiv.appendChild(delet)
+                nDiv.appendChild(edit)
+            }
+
             }
 
         
 
         nDiv.appendChild(save);
-
+        save.classList.add('butt');
         }
 
         let Di = document.getElementById("Fdiv");
@@ -48,6 +56,10 @@ document.getElementById("but").onclick = function ()
 
         nDiv.appendChild(edit);
         nDiv.appendChild(delet);
+
+        delet.classList.add('butt');
+        edit.classList.add('butt');
+        
     }
     //edit
 
